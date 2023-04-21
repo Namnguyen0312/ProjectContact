@@ -49,7 +49,7 @@ export const useAccountStore = defineStore("accounts", {
             }
         },
         async update(id, data) {
-            await accountService.updateUser(id, data);
+            await accountService.update(id, data);
         },
         async delete(id) {
             await accountService.deleteUser(id)

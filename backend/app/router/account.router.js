@@ -9,6 +9,7 @@ router
     .route('/:id')
     .get(accountController.findById)
     .delete(accountController.delete)
+    .put(accountController.update)
 router
     .route('/login')
     .post(accountController.findOneAccount);

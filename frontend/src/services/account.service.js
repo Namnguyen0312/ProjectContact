@@ -30,6 +30,8 @@ class AccountService {
     async register(data) {
         return (await this.api.post(`/`,data)).data; 
     }
-    
+    async update(id, data) {
+        return (await this.api.put(`/${id}`,data)).data;
+    }
 }
 export default new AccountService();

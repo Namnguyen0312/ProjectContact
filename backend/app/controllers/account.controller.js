@@ -133,5 +133,23 @@ class Methods {
                 ),
             );
     }
+    async update(req, res, next) {
+        var id = req.params.id;
+        var data = req.body;
+        var newAccount = { ...data };
+        if (!data.name.trim()) {
+            return next(new ApiError(400, 'Name can not be empty'));
+        }
+        await Account.findByIdAndUpdate(id, { $set: newAccount })
+            .then((data) => res.send(data))
+            .catch((error) => {
+                return next(
+                    new ApiError(
+                        500,
+                        'An error occurred while creating the accounts',
+                    ),
+                );
+            });
+    }
 }
 module.exports = new Methods();

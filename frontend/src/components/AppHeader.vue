@@ -11,9 +11,16 @@
     </div>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
-        <span class="d-none d-lg-inline m-0">My Account</span>
+        <span class="d-none d-lg-inline m-0 text-white" v-if="this.accountStore.account">{{
+          this.accountStore.account.name
+        }} </span>
       </button>
       <ul class="dropdown-menu">
+        <router-link :to="{ name: 'profile' }">
+          <li class="dropdown-item">
+            Edit Profile
+          </li>
+        </router-link>
         <router-link :to="{ name: 'login' }">
           <li @click="removeAccount()" class="dropdown-item">
             Log out
@@ -41,6 +48,6 @@ export default {
       localStorage.removeItem('id');
     },
   },
-   mounted() { },
+  mounted() { },
 };
 </script>
