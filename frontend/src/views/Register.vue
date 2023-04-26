@@ -5,7 +5,7 @@
         <section class="card-body">
             <Form @submit="submitFormRegister" :validation-schema="schema" v-slot="{ errors, isSubmitting }">
                 <section class="form-group">
-                    <label>Tên</label>
+                    <label>Name</label>
                     <Field name="name" type="text" v-model="user.name" class="form-control" :class="{ 'is-invalid': errors.name }" />
                     <section class="invalid-feedback">{{ errors.name }}</section>
                 </section>

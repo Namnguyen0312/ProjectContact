@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="updateUser">
         <div class="form-group">
-            <label for="name">Tên</label>
+            <label for="name">Name</label>
             <input name="name" type="text" class="form-control" v-model="this.account.name" />
             <ErrorMessage name="name" class="error-feedback" />
         </div>
@@ -16,13 +16,13 @@
             <ErrorMessage name="password" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="phone">Điện thoại</label>
+            <label for="phone">Phone</label>
             <input name="phone" type="tel" class="form-control" v-model="this.account.phone" />
             <ErrorMessage name="phone" class="error-feedback" />
         </div>
         <div class="form-group">
             <router-link :to="{ name: 'contactbook' }">
-                <button class="btn btn-primary">Lưu</button>
+                <button class="btn btn-primary">Save</button>
             </router-link>
         </div>
     </form>
