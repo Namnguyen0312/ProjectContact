@@ -76,8 +76,8 @@ export default {
   computed: {
     contactStrings() {
       return this.contacts.map((contact) => {
-        const { name, email, address, phone } = contact;
-        return [name, email, address, phone].join("");
+        const { name, email, address, phone , description} = contact;
+        return [name, email, address, phone, description].join("");
       });
     },
     filteredContacts() {

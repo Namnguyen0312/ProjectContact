@@ -9,6 +9,7 @@ const ContactSchame = new Schema(
         address: { type: String, require: true },
         phone: { type: String, require: true },
         favorite: { type: String, require: true},
+        description: { type: String, require: true},
     },
     {
         versionKey: false,

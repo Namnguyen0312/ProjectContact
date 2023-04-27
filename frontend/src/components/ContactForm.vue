@@ -20,6 +20,11 @@
             <Field name="phone" type="tel" class="form-control" v-model="contactLocal.phone" />
             <ErrorMessage name="phone" class="error-feedback" />
         </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <Field name="description" type="text" class="form-control" v-model="contactLocal.description" />
+            <ErrorMessage name="description" class="error-feedback" />
+        </div>
         <div class="form-group form-check">
             <input name="favorite" type="checkbox" class="form-check-input" v-model="contactLocal.favorite" />
             <label for="favorite" class="form-check-label">
@@ -28,7 +33,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary">Save</button>
-            <button v-if="contactLocal._id" type="button" class="ml-2 btn btn-danger" @click="deleteContact">
+            <button v-if="contact._id" type="button" class="ml-2 btn btn-danger" @click="deleteContact">
                 Xóa
             </button>
         </div>
