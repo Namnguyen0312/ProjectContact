@@ -21,7 +21,7 @@ export default {
 <template>
   <div id="app">
     <AppHeader v-if="accountStore.checkAccount()" />
-    <div class="container mt-3">
+    <div class="container mt-3 app">
       <router-view />
     </div>
   </div>

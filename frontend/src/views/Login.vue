@@ -79,8 +79,11 @@
   
   
   </script>
-  <!-- <style scoped>
+  <style scoped>
   .container_form{
+    height: 95vh;
+  }
+  /* .container_form{
       width: 100%;
       height: 100vh;
       margin: 0;
@@ -116,7 +119,7 @@
     text-align: center;
     margin-bottom: 24px;
     background-color: #24252A;
-  }
+  } */
   .btn {
     margin-top: 24px;
     text-decoration: none;
@@ -132,4 +135,4 @@
     color: red;
     margin: auto;
   }
-  </style> -->
+  </style>

@@ -2,28 +2,22 @@
     <form @submit.prevent="updateUser">
         <div class="form-group">
             <label for="name">Name</label>
-            <input name="name" type="text" class="form-control" v-model="this.account.name" />
-            <ErrorMessage name="name" class="error-feedback" />
+            <input name="name" type="text" class="form-control" v-model="this.useAccount.account.name" />
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input name="username" type="username" class="form-control" v-model="this.account.username" />
-            <ErrorMessage name="username" class="error-feedback" />
+            <input name="username" type="username" class="form-control" v-model="this.useAccount.account.username" />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input name="password" type="password" class="form-control" v-model="this.account.password" />
-            <ErrorMessage name="password" class="error-feedback" />
+            <input name="password" type="password" class="form-control" v-model="this.useAccount.account.password" />
         </div>
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input name="phone" type="tel" class="form-control" v-model="this.account.phone" />
-            <ErrorMessage name="phone" class="error-feedback" />
+            <input name="phone" type="tel" class="form-control" v-model="this.useAccount.account.phone" />
         </div>
         <div class="form-group">
-            <router-link :to="{ name: 'contactbook' }">
-                <button class="btn btn-primary">Save</button>
-            </router-link>
+            <button class="btn btn-primary">Save</button>
         </div>
     </form>
 </template>
@@ -42,11 +36,12 @@ export default {
     methods: {
         async updateUser() {
             try {
-                await this.useAccount.update(
+                // console.log(this.useAccount.account);
+                this.account = await this.useAccount.Update(
                     this.useAccount.account._id,
-                    this.useAccount.account,
+                    this.account,
                 );
-                this.$forceUpdate();
+                await this.$router.push({name: 'contactbook'})
             } catch (error) {
                 console.error(error);
             }
